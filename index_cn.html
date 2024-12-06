@@ -127,6 +127,109 @@
         .language-switch {
             margin: 0;
         }
+        
+        /* 更新目录样式 */
+        .toc {
+            position: fixed;
+            left: calc(50% - 850px);
+            top: 100px;
+            width: 200px;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            max-height: 80vh;
+            overflow-y: auto;
+            border: 1px solid #eaeaea;
+        }
+        
+        [data-theme="dark"] .toc {
+            background-color: #2d2d2d;
+            border-color: #404040;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        
+        .toc ul ul {
+            padding-left: 16px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            border-left: 2px solid #eaeaea;
+        }
+        
+        [data-theme="dark"] .toc ul ul {
+            border-left-color: #404040;
+        }
+        
+        .toc li {
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        
+        .toc li li {
+            margin-bottom: 8px;
+        }
+        
+        .toc a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            display: block;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        
+        .toc a:hover {
+            color: #0056b3;
+            background-color: #f8f9fa;
+            transform: translateX(4px);
+        }
+        
+        [data-theme="dark"] .toc a {
+            color: #e0e0e0;
+        }
+        
+        [data-theme="dark"] .toc a:hover {
+            color: #66b3ff;
+            background-color: #363636;
+        }
+        
+        /* 添加滚动条样式 */
+        .toc::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .toc::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .toc::-webkit-scrollbar-thumb {
+            background-color: #d1d5db;
+            border-radius: 3px;
+        }
+        
+        [data-theme="dark"] .toc::-webkit-scrollbar-thumb {
+            background-color: #4b5563;
+        }
+        
+        /* 在小屏幕上隐藏录 */
+        @media (max-width: 1440px) {
+            .toc {
+                left: 20px;
+            }
+        }
+        
+        @media (max-width: 1200px) {
+            .toc {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -135,6 +238,28 @@
         <button class="theme-switch" onclick="toggleTheme()" title="切换主题">
             🌓
         </button>
+    </div>
+
+    <div class="toc">
+        <ul>
+            <li><a href="#个人介绍">个人介绍</a></li>
+            <li><a href="#教育经历">教育经历</a></li>
+            <li><a href="#业界经历">业界经历</a></li>
+            <li><a href="#发表论文">发表论文</a>
+                <ul style="padding-left: 15px;">
+                    <li><a href="#工作论文">工作论文</a></li>
+                    <li><a href="#在审论文">在审论文</a></li>
+                    <li><a href="#已发表论文">已发表论文</a></li>
+                </ul>
+            </li>
+            <li><a href="#教学经历">教学经历</a></li>
+            <li><a href="#会议分享">会议分享</a>
+                <ul style="padding-left: 15px;">
+                    <li><a href="#学术会议">学术会议</a></li>
+                    <li><a href="#行业讲座">行业讲座</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
 
     <div class="header">
@@ -147,12 +272,12 @@
         </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="个人介绍">
         <h2>个人介绍</h2>
         <p>我是上海财经大学管理科学与工程专业的博士研究生，师从<a href="https://scholar.google.com/citations?hl=en&user=X1_FIncAAAAJ" target="_blank">高建军教授</a>。2019年毕业于华南理工大学软件工程专业，获得学士学位。</p>
     </div>
 
-    <div class="section">
+    <div class="section" id="教育经历">
         <h2>教育经历</h2>
         <ul style="list-style: none; padding-left: 0;">
             <li class="experience-item">
@@ -170,7 +295,7 @@
         </ul>
     </div>
 
-    <div class="section">
+    <div class="section" id="业界经历">
         <h2>业界经历</h2>
         <ul style="list-style: none; padding-left: 0;">
             <li class="experience-item">
@@ -192,11 +317,11 @@
         </ul>
     </div>
 
-    <div class="section">
+    <div class="section" id="发表论文">
         <h2>发表论文</h2>
         <p style="font-size: 0.9em; color: #666; margin-top: -10px; margin-bottom: 20px;">* 代表通讯作者</p>
         
-        <h3>工作论文</h3>
+        <h3 id="工作论文">工作论文</h3>
         <div class="publication">
             <p><strong>Jin Chengneng</strong>, Wu Weiping, Gao Jianjun*, & Lin Yu. "Multi-period Portfolio Optimization Problem with Intertemporal Spectral Risk Measures." Working Paper.</p>
         </div>
@@ -204,7 +329,7 @@
             <p><strong>Jin Chengneng</strong>, Gao Jianjun, Wu Weiping*, & Yan Jiajia. "Constrained Optimal Execution Problem in Limit Order Book Market with Stochastic Market Depth." Working Paper.</p>
         </div>
         
-        <h3>在审论文</h3>
+        <h3 id="在审论文">在审论文</h3>
         <div class="publication">
             <p><strong>Jin Chengeng</strong>, Wang Tongyao, Wu Weiping, Gao Jianjun*. "Cardinality Constrained Multi-Period Mean-Variance Portfolio Optimization with Regime Switching Parameters." <i>Automatica</i> (provisionally accepted as a regular paper).</p>
         </div>
@@ -221,7 +346,7 @@
             <p>Yu Pengrui, Liu Siya, <strong>Jin Chengneng</strong>, Gu Runsheng, & Gong Xiaomin*. "Optimization-based Spectral End-to-end Deep Reinforcement Learning for Equity Portfolio Management." <i>Pacific-Basin Finance Journal</i> (under review).</p>
         </div>
         
-        <h3>已发表/接收论文</h3>
+        <h3 id="已发表论文">已发表/接收论文</h3>
         <div class="publication">
             <p>吴伟平, 林雨, <strong>金成能</strong>, 唐振鹏*. (2024). 随机市场深度下基于风险管理和交易约束的最优执行问题. <i>中国管理科学</i>, 1-18. DOI: <a href="https://doi.org/10.16381/j.cnki.issn1003-207x.2023.1408" target="_blank">链接</a></p>
         </div>
@@ -230,7 +355,7 @@
         </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="教学经历">
         <h2>教学经历</h2>
         <ul style="list-style: none; padding-left: 0;">
             <li class="experience-item">
@@ -248,10 +373,10 @@
         </ul>
     </div>
 
-    <div class="section">
+    <div class="section" id="会议分享">
         <h2>会议分享</h2>
 
-        <h3>学术会议</h3>
+        <h3 id="学术会议">学术会议</h3>
         <ul style="list-style: none; padding-left: 0;">
             <li class="experience-item">
                 <span class="date-compact">2024年11月</span>
@@ -293,7 +418,7 @@
             </li>
         </ul>
 
-        <h3>行业讲座</h3>
+        <h3 id="行业讲座">行业讲座</h3>
         <ul style="list-style: none; padding-left: 0;">
             <li class="experience-item">
                 <span class="date-compact">2024年10月</span>

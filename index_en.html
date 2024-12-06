@@ -133,6 +133,109 @@
             width: 40px;
             height: 40px;
         }
+        
+        /* 更新目录样式 */
+        .toc {
+            position: fixed;
+            left: calc(50% - 850px);
+            top: 100px;
+            width: 200px;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            max-height: 80vh;
+            overflow-y: auto;
+            border: 1px solid #eaeaea;
+        }
+        
+        [data-theme="dark"] .toc {
+            background-color: #2d2d2d;
+            border-color: #404040;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        
+        .toc ul ul {
+            padding-left: 16px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            border-left: 2px solid #eaeaea;
+        }
+        
+        [data-theme="dark"] .toc ul ul {
+            border-left-color: #404040;
+        }
+        
+        .toc li {
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        
+        .toc li li {
+            margin-bottom: 8px;
+        }
+        
+        .toc a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            display: block;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        
+        .toc a:hover {
+            color: #0056b3;
+            background-color: #f8f9fa;
+            transform: translateX(4px);
+        }
+        
+        [data-theme="dark"] .toc a {
+            color: #e0e0e0;
+        }
+        
+        [data-theme="dark"] .toc a:hover {
+            color: #66b3ff;
+            background-color: #363636;
+        }
+        
+        /* 添加滚动条样式 */
+        .toc::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .toc::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .toc::-webkit-scrollbar-thumb {
+            background-color: #d1d5db;
+            border-radius: 3px;
+        }
+        
+        [data-theme="dark"] .toc::-webkit-scrollbar-thumb {
+            background-color: #4b5563;
+        }
+        
+        /* 在小屏幕上隐藏目录 */
+        @media (max-width: 1440px) {
+            .toc {
+                left: 20px;
+            }
+        }
+        
+        @media (max-width: 1200px) {
+            .toc {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -141,6 +244,28 @@
         <button class="theme-switch" onclick="toggleTheme()" title="Toggle theme">
             🌓
         </button>
+    </div>
+
+    <div class="toc">
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Industry Experience</a></li>
+            <li><a href="#publications">Publications</a>
+                <ul style="padding-left: 15px;">
+                    <li><a href="#working-papers">Working Papers</a></li>
+                    <li><a href="#under-review">Papers Under Review</a></li>
+                    <li><a href="#published">Papers Published</a></li>
+                </ul>
+            </li>
+            <li><a href="#teaching">Teaching Experience</a></li>
+            <li><a href="#talks">Talks</a>
+                <ul style="padding-left: 15px;">
+                    <li><a href="#academic-talks">Academic Talks</a></li>
+                    <li><a href="#industry-talks">Industry Talks</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
 
     <div class="header">
@@ -154,12 +279,12 @@
         </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="about">
         <h2>About Me</h2>
         <p>I am a final-year Ph.D. student in Management Science & Engineering at Shanghai University of Finance and Economics (SUFE), supervised by <a href="https://scholar.google.com/citations?hl=en&user=X1_FIncAAAAJ" target="_blank">Professor Gao Jianjun</a>. I received my bachelor's degree in Software Engineering from South China University of Technology (SCUT) in 2019.</p>
     </div>
 
-    <div class="section">
+    <div class="section" id="education">
         <h2>Education</h2>
         <ul style="list-style: none; padding-left: 0;">
             <li class="experience-item">
@@ -177,7 +302,7 @@
         </ul>
     </div>
 
-    <div class="section">
+    <div class="section" id="experience">
         <h2>Industry Experience</h2>
         <ul style="list-style: none; padding-left: 0;">
             <li class="experience-item">
@@ -199,7 +324,7 @@
         </ul>
     </div>
 
-    <div class="section">
+    <div class="section" id="publications">
         <h2>Publications</h2>
         <p style="font-size: 0.9em; color: #666; margin-top: -10px; margin-bottom: 20px;">* denotes corresponding author</p>
         
@@ -237,7 +362,7 @@
         </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="teaching">
         <h2>Teaching Experience</h2>
         <ul style="list-style: none; padding-left: 0;">
             <li class="experience-item">
@@ -255,7 +380,7 @@
         </ul>
     </div>
 
-    <div class="section">
+    <div class="section" id="talks">
         <h2>Talks</h2>
 
         <h3>Academic Talks</h3>
