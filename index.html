@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jin Chengneng | 金成能</title>
+    <script>
+        // 获取浏览器的语言设置
+        var userLang = navigator.language || navigator.userLanguage;
+        userLang = userLang.toLowerCase();
+
+        // 根据语言设置重定向
+        if (userLang.startsWith('zh')) {
+            // 中文用户重定向到中文版
+            window.location.href = 'index_cn.html';
+        } else {
+            // 其他语言用户重定向到英文版
+            window.location.href = 'index_en.html';
+        }
+    </script>
+</head>
+<body>
+    <!-- 如果 JavaScript 被禁用，显示两个语言版本的链接 -->
+    <noscript>
+        <div style="text-align: center; padding: 20px;">
+            <p><a href="index_cn.html">中文版本</a></p>
+            <p><a href="index_en.html">English Version</a></p>
+        </div>
+    </noscript>
+</body>
+</html> 
