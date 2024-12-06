@@ -236,6 +236,23 @@
                 display: none;
             }
         }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            .profile-img {
+                width: 150px;  /* 缩小头像尺寸 */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .profile-img {
+                width: 120px;  /* 在更小的屏幕上进一步缩小 */
+            }
+        }
     </style>
 </head>
 <body>
