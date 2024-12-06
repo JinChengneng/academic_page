@@ -141,6 +141,7 @@
             max-height: 80vh;
             overflow-y: auto;
             border: 1px solid #eaeaea;
+            transition: all 0.3s ease;
         }
         
         [data-theme="dark"] .toc {
@@ -183,6 +184,8 @@
             display: block;
             padding: 4px 8px;
             border-radius: 4px;
+            position: relative;
+            overflow: hidden;
         }
         
         .toc a:hover {
@@ -218,7 +221,7 @@
             background-color: #4b5563;
         }
         
-        /* 在小屏幕上隐藏录 */
+        /* 在小屏幕上隐藏目录 */
         @media (max-width: 1440px) {
             .toc {
                 left: 20px;
