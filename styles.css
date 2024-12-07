@@ -48,7 +48,9 @@ h1, h2 {
 }
 
 .publication {
-    margin-bottom: 15px;
+    margin-bottom: 2px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #eee;
 }
 
 .date {
@@ -256,4 +258,35 @@ h1, h2 {
     .profile-img {
         width: 120px;
     }
+} 
+
+.paper-title {
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 1.05em;
+}
+
+.authors {
+    margin: 3px 0;
+}
+
+[data-theme="dark"] .authors {
+    color: #e0e0e0;
+}
+
+.journal {
+    font-size: 0.95em;
+    margin-top: 3px;
+}
+
+[data-theme="dark"] .journal {
+    color: #e0e0e0;
+}
+
+.publication:last-child {
+    border-bottom: none;
+}
+
+[data-theme="dark"] .publication {
+    border-bottom-color: #333;
 } 
