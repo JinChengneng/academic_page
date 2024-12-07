@@ -48,9 +48,26 @@ h1, h2 {
 }
 
 .publication {
-    margin-bottom: 2px;
-    padding-bottom: 2px;
+    margin-bottom: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
     border-bottom: 1px solid #eee;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+    cursor: pointer;
+}
+
+.publication:hover {
+    background-color: #f8f9fa;
+    border-left-color: #2c3e50;
+    padding-left: 15px;
+    transform: translateX(5px);
+}
+
+[data-theme="dark"] .publication:hover {
+    background-color: #2d2d2d;
+    border-left-color: #66b3ff;
 }
 
 .date {
@@ -264,6 +281,8 @@ h1, h2 {
     font-weight: 500;
     margin-bottom: 5px;
     font-size: 1.05em;
+    margin-top: 0px;
+    padding-top: 5px;
 }
 
 .authors {
@@ -277,6 +296,7 @@ h1, h2 {
 .journal {
     font-size: 0.95em;
     margin-top: 3px;
+    margin-bottom: 3px;
 }
 
 [data-theme="dark"] .journal {
